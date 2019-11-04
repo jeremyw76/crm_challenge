@@ -1,0 +1,12 @@
+<h1 class="title">Customers</h1>
+<div class="level">
+  <span class="level-left">
+    <label class="label is-medium">Viewing: </label>
+    <%= link_to 'All', '/', class:"button is-small #{@filter == 'all' ? 'is-primary' : ''}" %>
+    <%= link_to 'Alphabetical', :alphabetized_customers, class:"button is-small #{@filter == 'alphabetical' ? 'is-primary' : ''}" %>
+    <%= link_to 'Missing email', :missing_email_customers, class:"button is-small #{@filter == 'no_email' ? 'is-primary' : ''}" %>
+  <span>
+</div>
+<div class="columns is-multiline">
+  <%= render @customers %>
+</div>

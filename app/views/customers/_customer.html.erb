@@ -1,3 +1,9 @@
-<div class="card">
-  <h1 class="title"><%= customer.full_name %></h1>
+<div class="column is-one-quarter">
+  <div class="customer card">
+    <h1 class="title"><%= customer.full_name %></h1>
+    <%= image_tag customer.image, class:'card-image', alt:'Customer depiction' %>
+    <p><strong>Province: </strong><%= province_from_number customer.phone_number %></p>
+    <p><%= number_to_phone customer.phone_number %></p>
+    <p><%= customer.email_address != '' ? customer.email_address : 'No email' %></p>
+  </div>
 </div>
